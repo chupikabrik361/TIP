@@ -2,6 +2,7 @@
 // Крылов Иван Андреевич
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
@@ -67,25 +68,29 @@ int main() {
             }
         }
 
-        int raznica = 0;
-        int dney = 1;
-        int pervyi = c[0];
-        for (int i = 1; i < n; i++) {
-            if (c[i] - pervyi > raznica) {
-                dney++;
-                pervyi = c[i];
+        long long minimum = 0;
+        long long maximum = static_cast<long long>(c[n - 1]) - c[0];
+        while (minimum < maximum) {
+            long long candidate = minimum + (maximum - minimum) / 2;
+            int dney = 1;
+            int pervyi = c[0];
+            for (int i = 1; i < n; i++) {
+                if (static_cast<long long>(c[i]) - pervyi > candidate) {
+                    dney++;
+                    pervyi = c[i];
+                }
             }
+            if (dney <= d) maximum = candidate;
+            else minimum = candidate + 1;
         }
-        if (dney <= d) break;
-        raznica++;
-        cout << "Минимальная разница: " << raznica << endl;
+        cout << "Минимальная разница: " << minimum << endl;
     }
 
     // Задача 3
     if (zadacha == 3) {
         int n, k, l;
         cin >> n >> k >> l;
-        int c[n+1];
+        vector<int> c(n);
         for (int i = 0; i < n; i++) cin >> c[i];
 
         for (int i = 0; i < n; i++) {
