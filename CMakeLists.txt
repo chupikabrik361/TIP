@@ -1,11 +1,15 @@
-cmake_minimum_required(VERSION 4.3)
-project(TIP)
+cmake_minimum_required(VERSION 3.16)
+project(TIP LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(TIP
-        КР_ТИП_задание_3.cpp
-        КР_ТИП_задание_4.cpp
-        "практическая работа 6. КрыловИ.А..cpp")
-
-add_executable(practice11 "практическая работа 11. КрыловИ.А..cpp")
+add_executable(assessment1_task3 assessment/01/task3.cpp)
+add_executable(assessment1_task4 assessment/01/task4.cpp)
+add_executable(practice6_task1 practices/06/task1.cpp)
+add_executable(practice6_task1_while practices/06/task1_while.cpp)
+add_executable(practice6_task2 practices/06/task2.cpp)
+add_executable(practice6_task3 practices/06/task3.cpp)
+add_executable(practice11 practices/11/main.cpp)
+add_executable(practice12 practices/12/main.cpp)

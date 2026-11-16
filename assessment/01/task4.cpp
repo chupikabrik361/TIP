@@ -4,7 +4,7 @@ int main() {
     int a;
     int b;
     int c;
-    int d;
+    char d;
     std::cin >> a;
     std::cin >> b;
     std::cin >> c;
@@ -39,10 +39,10 @@ int main() {
         int i;
         std::cin >> i;
         if (i%7 == 0) {
-            std::cout << 'True' << std::endl;
+            std::cout << "True" << std::endl;
         }
         else {
-            std::cout << 'False' << std::endl;
+            std::cout << "False" << std::endl;
         }
     }
     return 0;
